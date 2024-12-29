@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Row } from 'react-bootstrap'
 import { useState } from 'react';
 import Product from './product'
-function Productlist() {
+function Productlist({productss}) {
     const [products ,setProducts]=useState([
         {
           "id": 1,

@@ -1,24 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import  "./css/product.css" 
-function product(props) {
+
+function product({productData}) {
   return (
     <div>
+     
         <Card>
           <div className="image-box">
-      <Card.Img variant="top" src={props.productData.image}/>
+      <Card.Img variant="top" src={productData.image}/>
       </div>
       <Card.Body>
-        <Card.Title>{props.productData.title}</Card.Title>
+        <Card.Title>{productData.title}</Card.Title>
         <Card.Text>
-          <p>Description{props.productData.description}</p>
-          <p className='price'>${props.productData.price}</p>
+          <p>Description{productData.description}</p>
+          <p className='price'>${productData.price}</p>
         </Card.Text>
         <div className="button-box">
         <Button variant="primary">Add to cart</Button>
+        <Link to={`/product/${productData.id}`}>
         <Button variant="warning">View</Button>
+        </Link>
         </div>
       </Card.Body>
     </Card>

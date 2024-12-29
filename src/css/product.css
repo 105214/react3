@@ -24,3 +24,6 @@
 .price{
     color: red;
 }
+button.btn.btn-warning {
+    width: 100%;
+}
